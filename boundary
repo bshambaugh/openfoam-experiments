@@ -19,49 +19,49 @@ FoamFile
 (
     fixedWallsLeftTop
     {
-        type            patch;
+        type            noSlip;
         nFaces          80;
         startFace       16640;
     }
     backFaceLeftTop
     {
-        type            patch;
+        type            empty;
         nFaces          1680;
         startFace       16720;
     }
     frontFaceLeftTop
     {
-        type            patch;
+        type            empty;
         nFaces          1680;
         startFace       18400;
     }
     symmetryWallLeftTop
     {
-        type            patch;
+        type            symmetryPlane;
         nFaces          40;
         startFace       20080;
     }
     topToBottom
     {
-        type            patch;
+        type            empty;
         nFaces          80;
         startFace       20120;
     }
     plug
     {
-        type            patch;
+        type            plug;
         nFaces          40;
         startFace       20200;
     }
     symmetryWallLeftBottom
     {
-        type            patch;
+        type            symmetryPlane;
         nFaces          20;
         startFace       20240;
     }
     freeBoundryLeftBottom
     {
-        type            patch;
+        type            empty;
         nFaces          20;
         startFace       20260;
     }
@@ -79,19 +79,19 @@ FoamFile
     }
     backFaceLeftBottom
     {
-        type            patch;
+        type            empty;
         nFaces          400;
         startFace       20320;
     }
     frontFaceLeftBottom
     {
-        type            patch;
+        type            empty;
         nFaces          400;
         startFace       20720;
     }
     fixedWallsChannel
     {
-        type            patch;
+        type            noSlip;
         nFaces          10;
         startFace       21120;
     }
@@ -109,25 +109,25 @@ FoamFile
     }
     backFaceInletChannel
     {
-        type            patch;
+        type            empty;
         nFaces          25;
         startFace       21140;
     }
     frontFaceInletChannel
     {
-        type            patch;
+        type            empty;
         nFaces          25;
         startFace       21165;
     }
     freeBoundaryWalls
     {
-        type            patch;
+        type            empty;
         nFaces          160;
         startFace       21190;
     }
     backFaceRight
     {
-        type            patch;
+        type            empty;
         nFaces          6400;
         startFace       21350;
     }
@@ -139,13 +139,13 @@ FoamFile
     }
     frontFaceRight
     {
-        type            patch;
+        type            empty;
         nFaces          6400;
         startFace       27830;
     }
     fixedWallsBottom
     {
-        type            patch;
+        type            noSlip;
         nFaces          80;
         startFace       34230;
     }
