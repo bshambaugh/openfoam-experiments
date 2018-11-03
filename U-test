@@ -1,0 +1,158 @@
+/*--------------------------------*- C++ -*----------------------------------*\
+| =========                 |                                                 |
+| \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox           |
+|  \\    /   O peration     | Version:  4.1                                   |
+|   \\  /    A nd           | Web:      www.OpenFOAM.org                      |
+|    \\/     M anipulation  |                                                 |
+\*---------------------------------------------------------------------------*/
+FoamFile
+{
+    version     2.0;
+    format      ascii;
+    class       volVectorField;
+    object      U;
+}
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+
+dimensions      [0 1 -1 0 0 0 0];
+
+internalField   uniform (0 0 0);
+
+boundaryField
+{
+    fixedWallsLeftTop
+    {
+        type            noSlip;
+        nFaces          80;
+        startFace       16640;
+    }
+    backFaceLeftTop
+    {
+        type            zeroGradient;
+        nFaces          1680;
+        startFace       16720;
+    }
+    frontFaceLeftTop
+    {
+        type            zeroGradient;
+        nFaces          1680;
+        startFace       18400;
+    }
+    symmetryWallLeftTop
+    {
+        type            symmetryPlane;
+        nFaces          40;
+        startFace       20080;
+    }
+    topToBottom
+    {
+        type            cyclic;
+        nFaces          80;
+        startFace       20120;
+    }
+    plug
+    {
+        type            cyclic;
+        nFaces          40;
+        startFace       20200;
+    }
+    symmetryWallLeftBottom
+    {
+        type            symmetryPlane;
+        nFaces          20;
+        startFace       20240;
+    }
+    freeBoundryLeftBottom
+    {
+        type            zeroGradient;
+        nFaces          20;
+        startFace       20260;
+    }
+    leftSide
+    {
+        type            cyclic;
+        nFaces          20;
+        startFace       20280;
+    }
+    bottomToTop
+    {
+        type            cyclic;
+        nFaces          20;
+        startFace       20300;
+    }
+    backFaceLeftBottom
+    {
+        type            zeroGradient;
+        nFaces          400;
+        startFace       20320;
+    }
+    frontFaceLeftBottom
+    {
+        type            zeroGradient;
+        nFaces          400;
+        startFace       20720;
+    }
+    fixedWallsChannel
+    {
+        type            noSlip;
+        nFaces          10;
+        startFace       21120;
+    }
+    inlet
+    {
+        type            fixedValue;
+        value uniform(1 0 0);
+        nFaces          5;
+        startFace       21130;
+    }
+    outlet
+    {
+        type            cyclic;
+        nFaces          5;
+        startFace       21135;
+    }
+    backFaceInletChannel
+    {
+        type            zeroGradient;
+        nFaces          25;
+        startFace       21140;
+    }
+    frontFaceInletChannel
+    {
+        type            zeroGradient;
+        nFaces          25;
+        startFace       21165;
+    }
+    freeBoundaryWalls
+    {
+        type            zeroGradient;
+        nFaces          160;
+        startFace       21190;
+    }
+    backFaceRight
+    {
+        type            zeroGradient;
+        nFaces          6400;
+        startFace       21350;
+    }
+    LeftRightWalls
+    {
+        type            cyclic;
+        nFaces          80;
+        startFace       27750;
+    }
+    frontFaceRight
+    {
+        type            zeroGradient;
+        nFaces          6400;
+        startFace       27830;
+    }
+    fixedWallsBottom
+    {
+        type            noSlip;
+        nFaces          80;
+        startFace       34230;
+    }
+}
+
+// ************************************************************************* //
