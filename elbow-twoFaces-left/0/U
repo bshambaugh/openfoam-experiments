@@ -1,0 +1,87 @@
+/*--------------------------------*- C++ -*----------------------------------*\
+| =========                 |                                                 |
+| \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox           |
+|  \\    /   O peration     | Version:  4.1                                   |
+|   \\  /    A nd           | Web:      www.OpenFOAM.org                      |
+|    \\/     M anipulation  |                                                 |
+\*---------------------------------------------------------------------------*/
+FoamFile
+{
+    version     2.0;
+    format      ascii;
+    class       volVectorField;
+    object      U;
+}
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+
+dimensions      [0 1 -1 0 0 0 0];
+
+internalField   uniform (0 0 0);
+
+boundaryField
+{
+      sourceFaceleft
+    {
+        type            zeroGradient;
+        nFaces          400;
+        startFace       3880;
+    }
+    destinationFaceleft
+    {
+        type            zeroGradient;
+        nFaces          400;
+        startFace       4280;
+    }
+    channelWallsleft
+    {
+        type            zeroGradient;
+        nFaces          40;
+        startFace       4680;
+    }
+    leftRightWallleft
+    {
+        type            cyclic;
+        nFaces          20;
+        startFace       4720;
+    }
+    inlet
+    {
+        type            fixedValue;
+        value           uniform(1 0 0);
+        nFaces          20;
+        startFace       4740;
+    }
+    leftRightWallsright
+    {
+        type            cyclic;
+        nFaces          40;
+        startFace       4760;
+    }
+    outlet
+    {
+        type            zeroGradient;
+        nFaces          40;
+        startFace       4800;
+    }
+    channelWallsright
+    {
+        type            noSlip;
+        nFaces          80;
+        startFace       4840;
+    }
+    destinationFaceright
+    {
+        type            zeroGradient;
+        nFaces          1600;
+        startFace       4920;
+    }
+    sourceFaceright
+    {
+        type            zeroGradient;
+        nFaces          1600;
+        startFace       6520;
+    }
+
+}
+
+// ************************************************************************* //

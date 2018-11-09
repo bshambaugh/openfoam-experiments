@@ -1,0 +1,84 @@
+/*--------------------------------*- C++ -*----------------------------------*\
+| =========                 |                                                 |
+| \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox           |
+|  \\    /   O peration     | Version:  4.1                                   |
+|   \\  /    A nd           | Web:      www.OpenFOAM.org                      |
+|    \\/     M anipulation  |                                                 |
+\*---------------------------------------------------------------------------*/
+FoamFile
+{
+    version     2.0;
+    format      ascii;
+    class       polyBoundaryMesh;
+    location    "constant/polyMesh";
+    object      boundary;
+}
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+
+10
+(
+   sourceFaceleft
+    {
+        type            patch;
+        nFaces          400;
+        startFace       3880;
+    }
+    destinationFaceleft
+    {
+        type            patch;
+        nFaces          400;
+        startFace       4280;
+    }
+    channelWallsleft
+    {
+        type            wall;
+        nFaces          40;
+        startFace       4680;
+    }
+    leftRightWallleft  
+    {
+        type            cyclic;
+        neighbourPatch    leftRightWallsright;
+        nFaces          20;
+        startFace       4720;
+    }
+    inlet
+    {
+        type            patch;
+        nFaces          20;
+        startFace       4740;
+    }
+    leftRightWallsright
+    {
+        type            cyclic;
+        neighbourPatch  leftRightWallleft;
+        nFaces          40;
+        startFace       4760;
+    }
+    outlet
+    {
+        type            patch;
+        nFaces          40;
+        startFace       4800;
+    }
+    channelWallsright
+    {
+        type            wall;
+        nFaces          80;
+        startFace       4840;
+    }
+    destinationFaceright
+    {
+        type            patch;
+        nFaces          1600;
+        startFace       4920;
+    }
+    sourceFaceright
+    {
+        type            patch;
+        nFaces          1600;
+        startFace       6520;
+    }
+)
+
+// ************************************************************************* //

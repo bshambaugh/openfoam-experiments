@@ -1,0 +1,12 @@
+Created temporary 'elbow-twoFace.OpenFOAM'
+
+
+--> FOAM FATAL ERROR: 
+For patch leftRightWallleft there are 20 face centres, for the neighbour patch leftRightWallsright there are 40
+
+    From function void Foam::cyclicPolyPatch::calcTransforms(const primitivePatch&, const pointField&, const vectorField&, const pointField&, const vectorField&)
+    in file meshes/polyMesh/polyPatches/constraint/cyclic/cyclicPolyPatch.C at line 156.
+
+FOAM exiting
+
+
