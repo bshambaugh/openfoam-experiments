@@ -1,0 +1,86 @@
+/*--------------------------------*- C++ -*----------------------------------*\
+| =========                 |                                                 |
+| \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox           |
+|  \\    /   O peration     | Version:  4.1                                   |
+|   \\  /    A nd           | Web:      www.OpenFOAM.org                      |
+|    \\/     M anipulation  |                                                 |
+\*---------------------------------------------------------------------------*/
+FoamFile
+{
+    version     2.0;
+    format      ascii;
+    class       polyBoundaryMesh;
+    location    "constant/polyMesh";
+    object      boundary;
+}
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+
+10
+(
+    leftRightWallsright
+    {
+        type            cyclicAMI;
+        neighbourPatch  leftRightWallleft;
+        transform       noOrdering;
+        nFaces          40;
+        startFace       3880;
+    }
+    outlet
+    {
+        type            patch;
+        nFaces          40;
+        startFace       3920;
+    }
+    channelWallsright
+    {
+        type            wall;
+        nFaces          80;
+        startFace       3960;
+    }
+    destinationFaceright
+    {
+        type            patch;
+        nFaces          1600;
+        startFace       4040;
+    }
+    sourceFaceright
+    {
+        type            patch;
+        nFaces          1600;
+        startFace       5640;
+    }
+    sourceFaceleft
+    {
+        type            patch;
+        nFaces          400;
+        startFace       7240;
+    }
+    destinationFaceleft
+    {
+        type            patch;
+        nFaces          400;
+        startFace       7640;
+    }
+    channelWallsleft
+    {
+        type            wall;
+        nFaces          40;
+        startFace       8040;
+    }
+    leftRightWallleft
+    {
+        type            cyclicAMI;
+        neighbourPatch  leftRightWallsright;
+        transform       noOrdering;
+        nFaces          20;
+        startFace       8080;
+    }
+    inlet
+    {
+        type            patch;
+        nFaces          20;
+        startFace       8100;
+    }
+)
+
+// ************************************************************************* //
