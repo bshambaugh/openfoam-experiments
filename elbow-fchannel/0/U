@@ -35,23 +35,23 @@ boundaryField
     }
     destinationFaceright
     {
-        type            zeroGradient;
+        type            noSlip;
     }
     sourceFaceright
     {
-        type            zeroGradient;
+        type            noSlip;
     }
     sourceFaceleft
     {
-        type            zeroGradient;
+        type            noSlip;
     }
     destinationFaceleft
     {
-        type            zeroGradient;
+        type            noSlip;
     }
     channelWallsleft
     {
-        type            zeroGradient;
+        type            noSlip;
     }
     leftRightWallleft
     {
@@ -59,7 +59,8 @@ boundaryField
     }
     inlet
     {
-        type            zeroGradient;
+        type            fixedValue;
+        value           uniform(1 0 0);
     }
 }
 

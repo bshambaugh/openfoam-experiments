@@ -39,25 +39,25 @@ FoamFile
     }
     destinationFaceright
     {
-        type            patch;
+        type            wall;
         nFaces          1600;
         startFace       4040;
     }
     sourceFaceright
     {
-        type            patch;
+        type            wall;
         nFaces          1600;
         startFace       5640;
     }
     sourceFaceleft
     {
-        type            patch;
+        type            wall;
         nFaces          400;
         startFace       7240;
     }
     destinationFaceleft
     {
-        type            patch;
+        type            wall;
         nFaces          400;
         startFace       7640;
     }
