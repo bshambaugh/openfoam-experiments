@@ -9,12 +9,13 @@ FoamFile
 {
     version     2.0;
     format      ascii;
-    class       volScalarField;
-    object      p;
+    class       surfaceScalarField;
+    location    "10";
+    object      phi;
 }
 // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
 
-dimensions      [0 2 -2 0 0 0 0];
+dimensions      [0 3 -1 0 0 0 0];
 
 internalField   uniform 0;
 
@@ -23,45 +24,54 @@ boundaryField
     leftRightWallsright
     {
         type            cyclicAMI;
+        value           uniform 0;
     }
     outlet
     {
-        type            fixedValue;
-        value           uniform  0;
+        type            calculated;
+        value           uniform 0;
     }
     channelWallsright
     {
-        type            zeroGradient;
+        type            calculated;
+        value           uniform 0;
     }
     destinationFaceright
     {
-        type            zeroGradient;
+        type            calculated;
+        value           uniform 0;
     }
     sourceFaceright
     {
-        type            zeroGradient;
+        type            calculated;
+        value           uniform 0;
     }
     sourceFaceleft
     {
-        type            zeroGradient;
+        type            calculated;
+        value           uniform 0;
     }
     destinationFaceleft
     {
-        type            zeroGradient;
+        type            calculated;
+        value           uniform 0;
     }
     channelWallsleft
     {
-        type            zeroGradient;
+        type            calculated;
+        value           uniform 0;
     }
     leftRightWallleft
     {
         type            cyclicAMI;
+        value           uniform 0;
     }
     inlet
     {
-        type            zeroGradient;
+        type            calculated;
+        value           uniform 0;
     }
-
 }
+
 
 // ************************************************************************* //

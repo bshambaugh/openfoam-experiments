@@ -7,10 +7,10 @@
 \*---------------------------------------------------------------------------*/
 Build  : 4.1
 Exec   : icoFoam
-Date   : Nov 10 2018
-Time   : 15:33:30
+Date   : Nov 12 2018
+Time   : 15:46:25
 Host   : "caelinux"
-PID    : 30779
+PID    : 7232
 Case   : /home/caelinux/OpenFOAM/caelinux-4.1/run/tutorials/incompressible/icoFoam/elbow-fchannel
 nProcs : 1
 sigFpe : Enabling floating point exception trapping (FOAM_SIGFPE).
@@ -20,7 +20,7 @@ allowSystemOperations : Allowing user-supplied system call operations
 // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
 Create time
 
-Create mesh for time = 0
+Create mesh for time = 10
 
 
 PISO: Operating solver in PISO mode
@@ -29,20 +29,15 @@ Reading transportProperties
 
 Reading field p
 
+Reading field U
+
+Reading/calculating face flux field phi
+
 AMI: Creating addressing and weights between 40 source faces and 20 target faces
 AMI: Patch source sum(weights) min/max/average = 1, 1, 1
 AMI: Patch target sum(weights) min/max/average = 1, 1, 1
-Reading field U
 
+Starting time loop
 
-
---> FOAM FATAL IO ERROR: 
-"ill defined primitiveEntry starting at keyword 'value' on line 63 and ending at line 69"
-
-file: /home/caelinux/OpenFOAM/caelinux-4.1/run/tutorials/incompressible/icoFoam/elbow-fchannel/0/U at line 69.
-
-    From function void Foam::primitiveEntry::readEntry(const Foam::dictionary&, Foam::Istream&)
-    in file db/dictionary/primitiveEntry/primitiveEntryIO.C at line 189.
-
-FOAM exiting
+End
 

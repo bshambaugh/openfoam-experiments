@@ -7,10 +7,10 @@
 \*---------------------------------------------------------------------------*/
 Build  : 4.1
 Exec   : fluentMeshToFoam elbow.msh
-Date   : Nov 10 2018
-Time   : 15:33:30
+Date   : Nov 12 2018
+Time   : 15:46:25
 Host   : "caelinux"
-PID    : 30778
+PID    : 7231
 Case   : /home/caelinux/OpenFOAM/caelinux-4.1/run/tutorials/incompressible/icoFoam/elbow-fchannel
 nProcs : 1
 sigFpe : Enabling floating point exception trapping (FOAM_SIGFPE).

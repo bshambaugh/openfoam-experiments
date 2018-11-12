@@ -10,6 +10,7 @@ FoamFile
     version     2.0;
     format      ascii;
     class       volScalarField;
+    location    "6";
     object      p;
 }
 // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
@@ -23,11 +24,12 @@ boundaryField
     leftRightWallsright
     {
         type            cyclicAMI;
+        value           uniform 0;
     }
     outlet
     {
         type            fixedValue;
-        value           uniform  0;
+        value           uniform 0;
     }
     channelWallsright
     {
@@ -56,12 +58,13 @@ boundaryField
     leftRightWallleft
     {
         type            cyclicAMI;
+        value           uniform 0;
     }
     inlet
     {
         type            zeroGradient;
     }
-
 }
+
 
 // ************************************************************************* //

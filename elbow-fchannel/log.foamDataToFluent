@@ -7,10 +7,10 @@
 \*---------------------------------------------------------------------------*/
 Build  : 4.1
 Exec   : foamDataToFluent
-Date   : Nov 10 2018
-Time   : 15:33:30
+Date   : Nov 12 2018
+Time   : 15:46:25
 Host   : "caelinux"
-PID    : 30781
+PID    : 7234
 Case   : /home/caelinux/OpenFOAM/caelinux-4.1/run/tutorials/incompressible/icoFoam/elbow-fchannel
 nProcs : 1
 sigFpe : Enabling floating point exception trapping (FOAM_SIGFPE).
@@ -27,15 +27,47 @@ AMI: Creating addressing and weights between 40 source faces and 20 target faces
 AMI: Patch source sum(weights) min/max/average = 1, 1, 1
 AMI: Patch target sum(weights) min/max/average = 1, 1, 1
     Converting field p
+    Converting field U
 
+Time = 1
+    Converting field p
+    Converting field U
 
---> FOAM FATAL IO ERROR: 
-"ill defined primitiveEntry starting at keyword 'value' on line 63 and ending at line 69"
+Time = 2
+    Converting field p
+    Converting field U
 
-file: /home/caelinux/OpenFOAM/caelinux-4.1/run/tutorials/incompressible/icoFoam/elbow-fchannel/0/U at line 69.
+Time = 3
+    Converting field p
+    Converting field U
 
-    From function void Foam::primitiveEntry::readEntry(const Foam::dictionary&, Foam::Istream&)
-    in file db/dictionary/primitiveEntry/primitiveEntryIO.C at line 189.
+Time = 4
+    Converting field p
+    Converting field U
 
-FOAM exiting
+Time = 5
+    Converting field p
+    Converting field U
+
+Time = 6
+    Converting field p
+    Converting field U
+
+Time = 7
+    Converting field p
+    Converting field U
+
+Time = 8
+    Converting field p
+    Converting field U
+
+Time = 9
+    Converting field p
+    Converting field U
+
+Time = 10
+    Converting field p
+    Converting field U
+
+End
 
