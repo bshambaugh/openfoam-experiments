@@ -19,19 +19,19 @@ FoamFile
 (
     fixedWallsLeftTop
     {
-        type            patch;
+        type            wall;
         nFaces          80;
         startFace       3240;
     }
     backFaceLeftTop
     {
-        type            patch;
+        type            wall;
         nFaces          1680;
         startFace       3320;
     }
     frontFaceLeftTop
     {
-        type            patch;
+        type            wall;
         nFaces          1680;
         startFace       5000;
     }
@@ -43,19 +43,21 @@ FoamFile
     }
     topToBottom
     {
-        type            patch;
+        type            wall;
         nFaces          80;
         startFace       6720;
     }
     plug
     {
-        type            patch;
+        type            cyclicAMI;
+        neighbourPatch  outlet;
+        transform       noOrdering;
         nFaces          40;
         startFace       6800;
     }
     fixedWallsChannel
     {
-        type            patch;
+        type            wall;
         nFaces          10;
         startFace       6840;
     }
@@ -67,19 +69,21 @@ FoamFile
     }
     outlet
     {
-        type            patch;
+        type            cyclicAMI;
+        neighbourPatch  plug;
+        transform       noOrdering;
         nFaces          5;
         startFace       6855;
     }
     backFaceInletChannel
     {
-        type            patch;
+        type            wall;
         nFaces          25;
         startFace       6860;
     }
     frontFaceInletChannel
     {
-        type            patch;
+        type            wall;
         nFaces          25;
         startFace       6885;
     }
