@@ -1,0 +1,88 @@
+/*--------------------------------*- C++ -*----------------------------------*\
+| =========                 |                                                 |
+| \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox           |
+|  \\    /   O peration     | Version:  4.1                                   |
+|   \\  /    A nd           | Web:      www.OpenFOAM.org                      |
+|    \\/     M anipulation  |                                                 |
+\*---------------------------------------------------------------------------*/
+FoamFile
+{
+    version     2.0;
+    format      ascii;
+    class       polyBoundaryMesh;
+    location    "constant/polyMesh";
+    object      boundary;
+}
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+
+11
+(
+    fixedWallsLeftTop
+    {
+        type            patch;
+        nFaces          80;
+        startFace       3240;
+    }
+    backFaceLeftTop
+    {
+        type            patch;
+        nFaces          1680;
+        startFace       3320;
+    }
+    frontFaceLeftTop
+    {
+        type            patch;
+        nFaces          1680;
+        startFace       5000;
+    }
+    symmetryWallLeftTop
+    {
+        type            patch;
+        nFaces          40;
+        startFace       6680;
+    }
+    topToBottom
+    {
+        type            patch;
+        nFaces          80;
+        startFace       6720;
+    }
+    plug
+    {
+        type            patch;
+        nFaces          40;
+        startFace       6800;
+    }
+    fixedWallsChannel
+    {
+        type            patch;
+        nFaces          10;
+        startFace       6840;
+    }
+    inlet
+    {
+        type            patch;
+        nFaces          5;
+        startFace       6850;
+    }
+    outlet
+    {
+        type            patch;
+        nFaces          5;
+        startFace       6855;
+    }
+    backFaceInletChannel
+    {
+        type            patch;
+        nFaces          25;
+        startFace       6860;
+    }
+    frontFaceInletChannel
+    {
+        type            patch;
+        nFaces          25;
+        startFace       6885;
+    }
+)
+
+// ************************************************************************* //
