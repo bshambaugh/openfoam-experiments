@@ -20,46 +20,76 @@ internalField   uniform 0;
 
 boundaryField
 {
-    leftRightWallsright
+    fixedWallsLeftTop
     {
-        type            cyclicAMI;
+        type            zeroGradient;
+        nFaces          80;
+        startFace       3240;
     }
-    outlet
+    backFaceLeftTop
+    {
+        type            zeroGradient;
+        nFaces          1680;
+        startFace       3320;
+    }
+    frontFaceLeftTop
+    {
+        type            zeroGradient;
+        nFaces          1680;
+        startFace       5000;
+    }
+    symmetryWallLeftTop
     {
         type            fixedValue;
-        value           uniform  0;
+        value           uniform 0;    
+        nFaces          40;
+        startFace       6680;
     }
-    channelWallsright
+    topToBottom
     {
         type            zeroGradient;
+        nFaces          80;
+        startFace       6720;
     }
-    destinationFaceright
-    {
-        type            zeroGradient;
-    }
-    sourceFaceright
-    {
-        type            zeroGradient;
-    }
-    sourceFaceleft
-    {
-        type            zeroGradient;
-    }
-    destinationFaceleft
-    {
-        type            zeroGradient;
-    }
-    channelWallsleft
-    {
-        type            zeroGradient;
-    }
-    leftRightWallleft
+    plug
     {
         type            cyclicAMI;
+        neighbourPatch  outlet;
+        transform       noOrdering;
+        nFaces          40;
+        startFace       6800;
+    }
+    fixedWallsChannel
+    {
+        type            zeroGradient;
+        nFaces          10;
+        startFace       6840;
     }
     inlet
     {
         type            zeroGradient;
+        nFaces          5;
+        startFace       6850;
+    }
+    outlet
+    {
+        type            cyclicAMI;
+        neighbourPatch  plug;
+        transform       noOrdering;
+        nFaces          5;
+        startFace       6855;
+    }
+    backFaceInletChannel
+    {
+        type            zeroGradient;
+        nFaces          25;
+        startFace       6860;
+    }
+    frontFaceInletChannel
+    {
+        type            zeroGradient;
+        nFaces          25;
+        startFace       6885;
     }
 
 }

@@ -20,46 +20,72 @@ internalField   uniform (0 0 0);
 
 boundaryField
 {
-       leftRightWallsright
-    {
-        type            cyclicAMI;
-    }
-    outlet
-    {
-        type            zeroGradient;
-    }
-    channelWallsright
-    {
-        type           noSlip;
-    }
-    destinationFaceright
-    {
-        type            zeroGradient;
-    }
-    sourceFaceright
-    {
-        type            zeroGradient;
-    }
-    sourceFaceleft
-    {
-        type            zeroGradient;
-    }
-    destinationFaceleft
-    {
-        type            zeroGradient;
-    }
-    channelWallsleft
+   fixedWallsLeftTop
     {
         type            noSlip;
+        nFaces          80;
+        startFace       3240;
     }
-    leftRightWallleft
+    backFaceLeftTop
+    {
+        type            noSlip;
+        nFaces          1680;
+        startFace       3320;
+    }
+    frontFaceLeftTop
+    {
+        type            noSlip;
+        nFaces          1680;
+        startFace       5000;
+    }
+    symmetryWallLeftTop
+    {
+        type            zeroGradient;
+        nFaces          40;
+        startFace       6680;
+    }
+    topToBottom
+    {
+        type            noSlip;
+        nFaces          80;
+        startFace       6720;
+    }
+    plug
     {
         type            cyclicAMI;
+        nFaces          40;
+        startFace       6800;
+    }
+    fixedWallsChannel
+    {
+        type            noSlip;
+        nFaces          10;
+        startFace       6840;
     }
     inlet
     {
         type            fixedValue;
-        value           uniform (10 0 0);
+        value           uniform (100 100 0);
+        nFaces          5;
+        startFace       6850;
+    }
+    outlet
+    {
+        type            cyclicAMI;
+        nFaces          5;
+        startFace       6855;
+    }
+    backFaceInletChannel
+    {
+        type            noSlip;
+        nFaces          25;
+        startFace       6860;
+    }
+    frontFaceInletChannel
+    {
+        type            noSlip;
+        nFaces          25;
+        startFace       6885;
     }
 }
 
