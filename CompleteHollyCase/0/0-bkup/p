@@ -9,57 +9,56 @@ FoamFile
 {
     version     2.0;
     format      ascii;
-    class       polyBoundaryMesh;
-    location    "constant/polyMesh";
-    object      boundary;
+    class       volScalarField;
+    object      p;
 }
 // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
 
-22
-(
+dimensions      [0 2 -2 0 0 0 0];
+
+internalField   uniform 0;
+
+boundaryField
+{
     fixedWallsLeftTop
     {
-        type            wall;
+        type            patch;
         nFaces          80;
         startFace       16640;
     }
     backFaceLeftTop
     {
-        type            wall;
+        type            patch;
         nFaces          1680;
         startFace       16720;
     }
     frontFaceLeftTop
     {
-        type            wall;
+        type            patch;
         nFaces          1680;
         startFace       18400;
     }
     symmetryWallLeftTop
     {
-        type            symmetryPlane;
+        type            patch;
         nFaces          40;
         startFace       20080;
     }
     topToBottom
     {
-        type            cyclicAMI;
-        neighbourPath   bottomToTop;
-        transform       noOrdering;
+        type            patch;
         nFaces          80;
         startFace       20120;
     }
     plug
     {
-        type            cyclicAMI;
-        neighbourPath   bottomToTop;
-        transform       noOrdering;
+        type            patch;
         nFaces          40;
         startFace       20200;
     }
     symmetryWallLeftBottom
     {
-        type            symmetryPlane;
+        type            patch;
         nFaces          20;
         startFace       20240;
     }
@@ -71,35 +70,31 @@ FoamFile
     }
     leftSide
     {
-        type            cyclicAMI;
-        neighbourPath   LeftRightWalls;
-        transform       noOrdering;
+        type            patch;
         nFaces          20;
         startFace       20280;
     }
     bottomToTop
     {
-        type            cyclicAMI;
-        neighbourPath   topToBottom;
-        transform       noOrdering;
+        type            patch;
         nFaces          20;
         startFace       20300;
     }
     backFaceLeftBottom
     {
-        type            wall;
+        type            patch;
         nFaces          400;
         startFace       20320;
     }
     frontFaceLeftBottom
     {
-        type            wall;
+        type            patch;
         nFaces          400;
         startFace       20720;
     }
     fixedWallsChannel
     {
-        type            wall;
+        type            patch;
         nFaces          10;
         startFace       21120;
     }
@@ -111,21 +106,19 @@ FoamFile
     }
     outlet
     {
-        type            cyclicAMI;
-        neighbourPath   plug;
-        transform       noOrdering;
+        type            patch;
         nFaces          5;
         startFace       21135;
     }
     backFaceInletChannel
     {
-        type            wall;
+        type            patch;
         nFaces          25;
         startFace       21140;
     }
     frontFaceInletChannel
     {
-        type            wall;
+        type            patch;
         nFaces          25;
         startFace       21165;
     }
@@ -137,31 +130,29 @@ FoamFile
     }
     backFaceRight
     {
-        type            wall;
+        type            patch;
         nFaces          6400;
         startFace       21350;
     }
     LeftRightWalls
     {
-        type            cyclicAMI;
-        neighbourPath   leftSide;
-        neighbourPath   topToBottom;
-        transform       noOrdering;
+        type            patch;
         nFaces          80;
         startFace       27750;
     }
     frontFaceRight
     {
-        type            wall;
+        type            patch;
         nFaces          6400;
         startFace       27830;
     }
     fixedWallsBottom
     {
-        type            wall;
+        type            patch;
         nFaces          80;
         startFace       34230;
     }
-)
+
+}
 
 // ************************************************************************* //
