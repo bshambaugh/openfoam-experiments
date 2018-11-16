@@ -25,13 +25,13 @@ FoamFile
     }
     backFaceLeftTop
     {
-        type            wall;
+        type            patch;
         nFaces          1680;
         startFace       16720;
     }
     frontFaceLeftTop
     {
-        type            wall;
+        type            patch;
         nFaces          1680;
         startFace       18400;
     }
@@ -44,7 +44,7 @@ FoamFile
     topToBottom
     {
         type            cyclicAMI;
-        neighbourPath   bottomToTop;
+        neighbourPatch   bottomToTop;
         transform       noOrdering;
         nFaces          80;
         startFace       20120;
@@ -52,7 +52,7 @@ FoamFile
     plug
     {
         type            cyclicAMI;
-        neighbourPath   bottomToTop;
+        neighbourPatch   bottomToTop;
         transform       noOrdering;
         nFaces          40;
         startFace       20200;
@@ -72,7 +72,7 @@ FoamFile
     leftSide
     {
         type            cyclicAMI;
-        neighbourPath   LeftRightWalls;
+        neighbourPatch   LeftRightWalls;
         transform       noOrdering;
         nFaces          20;
         startFace       20280;
@@ -80,14 +80,14 @@ FoamFile
     bottomToTop
     {
         type            cyclicAMI;
-        neighbourPath   topToBottom;
+        neighbourPatch   topToBottom;
         transform       noOrdering;
         nFaces          20;
         startFace       20300;
     }
     backFaceLeftBottom
     {
-        type            wall;
+        type            patch;
         nFaces          400;
         startFace       20320;
     }
@@ -112,14 +112,14 @@ FoamFile
     outlet
     {
         type            cyclicAMI;
-        neighbourPath   plug;
+        neighbourPatch   plug;
         transform       noOrdering;
         nFaces          5;
         startFace       21135;
     }
     backFaceInletChannel
     {
-        type            wall;
+        type            patch;
         nFaces          25;
         startFace       21140;
     }
@@ -137,22 +137,22 @@ FoamFile
     }
     backFaceRight
     {
-        type            wall;
+        type            patch;
         nFaces          6400;
         startFace       21350;
     }
     LeftRightWalls
     {
         type            cyclicAMI;
-        neighbourPath   leftSide;
-        neighbourPath   topToBottom;
+        neighbourPatch   leftSide;
+        neighbourPatch   topToBottom;
         transform       noOrdering;
         nFaces          80;
         startFace       27750;
     }
     frontFaceRight
     {
-        type            wall;
+        type            patch;
         nFaces          6400;
         startFace       27830;
     }

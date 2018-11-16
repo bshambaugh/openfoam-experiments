@@ -1,0 +1,47 @@
+/*---------------------------------------------------------------------------*\
+| =========                 |                                                 |
+| \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox           |
+|  \\    /   O peration     | Version:  4.1                                   |
+|   \\  /    A nd           | Web:      www.OpenFOAM.org                      |
+|    \\/     M anipulation  |                                                 |
+\*---------------------------------------------------------------------------*/
+Build  : 4.1
+Exec   : foamMeshToFluent
+Date   : Nov 15 2018
+Time   : 22:10:06
+Host   : "caelinux"
+PID    : 20499
+Case   : /home/caelinux/Downloads/openfoam-experiments/CompleteHollyCase
+nProcs : 1
+sigFpe : Enabling floating point exception trapping (FOAM_SIGFPE).
+fileModificationChecking : Monitoring run-time modified files using timeStampMaster
+allowSystemOperations : Allowing user-supplied system call operations
+
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+Create time
+
+Create mesh for time = 0
+
+--> FOAM Warning : 
+    From function virtual Foam::label Foam::cyclicAMIPolyPatch::neighbPatchID() const
+    in file AMIInterpolation/patches/cyclicAMI/cyclicAMIPolyPatch/cyclicAMIPolyPatch.C at line 722
+    Patch plug specifies neighbour patch bottomToTop
+ but that in return specifies topToBottom
+--> FOAM Warning : 
+    From function virtual Foam::label Foam::cyclicAMIPolyPatch::neighbPatchID() const
+    in file AMIInterpolation/patches/cyclicAMI/cyclicAMIPolyPatch/cyclicAMIPolyPatch.C at line 722
+    Patch leftSide specifies neighbour patch LeftRightWalls
+ but that in return specifies topToBottom
+--> FOAM Warning : 
+    From function virtual Foam::label Foam::cyclicAMIPolyPatch::neighbPatchID() const
+    in file AMIInterpolation/patches/cyclicAMI/cyclicAMIPolyPatch/cyclicAMIPolyPatch.C at line 722
+    Patch outlet specifies neighbour patch plug
+ but that in return specifies bottomToTop
+--> FOAM Warning : 
+    From function virtual Foam::label Foam::cyclicAMIPolyPatch::neighbPatchID() const
+    in file AMIInterpolation/patches/cyclicAMI/cyclicAMIPolyPatch/cyclicAMIPolyPatch.C at line 722
+    Patch LeftRightWalls specifies neighbour patch topToBottom
+ but that in return specifies bottomToTop
+Writing Header
+End
+

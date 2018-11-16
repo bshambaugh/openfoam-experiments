@@ -1,0 +1,110 @@
+/*--------------------------------*- C++ -*----------------------------------*\
+| =========                 |                                                 |
+| \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox           |
+|  \\    /   O peration     | Version:  4.1                                   |
+|   \\  /    A nd           | Web:      www.OpenFOAM.org                      |
+|    \\/     M anipulation  |                                                 |
+\*---------------------------------------------------------------------------*/
+FoamFile
+{
+    version     2.0;
+    format      ascii;
+    class       volVectorField;
+    object      U;
+}
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+
+dimensions      [0 1 -1 0 0 0 0];
+
+internalField   uniform (0 0 0);
+
+boundaryField
+{
+   inletFace
+    {
+        type            zeroGradient;
+        nFaces          450;
+        startFace       52920;
+    }
+    inlet
+    {
+        type            fixedValue;
+        value           uniform (10 0 0);
+        nFaces          15;
+        startFace       53370;
+    }
+    inletWalls
+    {
+        type            noSlip;
+        nFaces          30;
+        startFace       53385;
+    }
+    outletInlet
+    {
+        type            cyclicAMI;
+        nFaces          15;
+        startFace       53415;
+    }
+    fineSymmetryWall
+    {
+        type            symmetryPlane;
+        nFaces          80;
+        startFace       53430;
+    }
+    fineWalls
+    {
+        type            noSlip;
+        nFaces          160;
+        startFace       53510;
+    }
+    fineCyclicBoundary
+    {
+        type            cyclicAMI;
+        nFaces          160;
+        startFace       53670;
+    }
+    fineplug
+    {
+        type            cyclicAMI;
+        nFaces          80;
+        startFace       53830;
+    }
+    faceFine
+    {
+        type            zeroGradient;
+        nFaces          13120;
+        startFace       53910;
+    }
+    courseFace
+    {
+        type            zeroGradient;
+        nFaces          40000;
+        startFace       67030;
+    }
+    courseCyclicBoundary
+    {
+        type            cyclicAMI;
+        nFaces          200;
+        startFace       107030;
+    }
+    courseWalls
+    {
+        type            noSlip;
+        nFaces          100;
+        startFace       107230;
+    }
+    freeBoundaryCourse
+    {
+        type            zeroGradient;
+        nFaces          200;
+        startFace       107330;
+    }
+    courseSymmetryWalls
+    {
+        type            symmetryPlane;
+        nFaces          100;
+        startFace       107530;
+    }
+}
+
+// ************************************************************************* //
