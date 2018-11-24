@@ -70,7 +70,8 @@ boundaryField
     }
     courseWalls
     {
-        type            zeroGradient;
+        type            kqRWallFunction;
+        value           uniform 0.2;
     }
     freeBoundaryCourse
     {
@@ -78,8 +79,7 @@ boundaryField
     }
     courseSymmetryWalls
     {
-         type            kqRWallFunction;
-         value           uniform 0.2;
+         type            symmetryPlane;
     }
 }
 
