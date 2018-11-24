@@ -1,0 +1,114 @@
+/*--------------------------------*- C++ -*----------------------------------*\
+| =========                 |                                                 |
+| \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox           |
+|  \\    /   O peration     | Version:  4.1                                   |
+|   \\  /    A nd           | Web:      www.OpenFOAM.org                      |
+|    \\/     M anipulation  |                                                 |
+\*---------------------------------------------------------------------------*/
+FoamFile
+{
+    version     2.0;
+    format      ascii;
+    class       polyBoundaryMesh;
+    location    "constant/polyMesh";
+    object      boundary;
+}
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+
+14
+(
+    inletFace
+    {
+        type            patch;
+        nFaces          450;
+        startFace       52920;
+    }
+    inlet
+    {
+        type            patch;
+        nFaces          15;
+        startFace       53370;
+    }
+    inletWalls
+    {
+        type            wall;
+        nFaces          30;
+        startFace       53385;
+    }
+    outletInlet
+    {
+        type            cyclicAMI;
+        neighbourPatch   fineplug;
+        transform       noOrdering;
+        nFaces          15;
+        startFace       53415;
+    }
+    fineSymmetryWall
+    {
+        type            symmetryPlane;
+        nFaces          80;
+        startFace       53430;
+    }
+    fineWalls
+    {
+        type            wall;
+        nFaces          160;
+        startFace       53510;
+    }
+    fineCyclicBoundary
+    {
+        type            cyclicAMI;
+        neighbourPatch  courseCyclicBoundary;
+        transform       noOrdering;
+        nFaces          160;
+        startFace       53670;
+    }
+    fineplug
+    {
+        type            cyclicAMI;
+        neighbourPatch  outletInlet;
+        transform       noOrdering;
+        nFaces          80;
+        startFace       53830;
+    }
+    faceFine
+    {
+        type            patch;
+        nFaces          13120;
+        startFace       53910;
+    }
+    courseFace
+    {
+        type            patch;
+        nFaces          40000;
+        startFace       67030;
+    }
+    courseCyclicBoundary
+    {
+        type            cyclicAMI;
+        neighbourPatch  fineCyclicBoundary;
+        transform       noOrdering;
+        nFaces          200;
+        startFace       107030;
+    }
+    courseWalls
+    {
+        type            wall;
+        nFaces          100;
+        startFace       107230;
+    }
+    freeBoundaryCourse
+    {
+        type            patch;
+        nFaces          200;
+        startFace       107330;
+    }
+    courseSymmetryWalls
+    {
+        type            symmetryPlane;
+        nFaces          100;
+        startFace       107530;
+    }
+)
+
+// ************************************************************************* //
