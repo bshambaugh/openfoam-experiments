@@ -1,0 +1,47 @@
+/*---------------------------------------------------------------------------*\
+| =========                 |                                                 |
+| \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox           |
+|  \\    /   O peration     | Version:  4.1                                   |
+|   \\  /    A nd           | Web:      www.OpenFOAM.org                      |
+|    \\/     M anipulation  |                                                 |
+\*---------------------------------------------------------------------------*/
+Build  : 4.1
+Exec   : foamDataToFluent
+Date   : Dec 02 2018
+Time   : 07:38:08
+Host   : "caelinux"
+PID    : 19930
+Case   : /home/caelinux/OpenFOAM/caelinux-4.1/run/tutorials/incompressible/icoFoam/CourseMesh
+nProcs : 1
+sigFpe : Enabling floating point exception trapping (FOAM_SIGFPE).
+fileModificationChecking : Monitoring run-time modified files using timeStampMaster
+allowSystemOperations : Allowing user-supplied system call operations
+
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+Create time
+
+Create mesh for time = 0
+
+
+
+--> FOAM FATAL ERROR: 
+Attempt to cast type patch to type cyclicAMI
+
+    From function To& Foam::refCast(From&) [with To = const Foam::cyclicAMIPolyPatch; From = const Foam::polyPatch]
+    in file /home/ubuntu/OpenFOAM/OpenFOAM-4.1/src/OpenFOAM/lnInclude/typeInfo.H at line 114.
+
+FOAM aborting
+
+#0  Foam::error::printStack(Foam::Ostream&) at ??:?
+#1  Foam::error::abort() at ??:?
+#2  Foam::cyclicAMIPolyPatch const& Foam::refCast<Foam::cyclicAMIPolyPatch const, Foam::polyPatch const>(Foam::polyPatch const&) at ??:?
+#3  Foam::cyclicAMIPolyPatch::neighbPatchID() const at ??:?
+#4  Foam::cyclicAMIPolyPatch::neighbPatch() const at ??:?
+#5  Foam::cyclicAMIPolyPatch::calcGeometry(Foam::PstreamBuffers&) at ??:?
+#6  Foam::polyBoundaryMesh::calcGeometry() at ??:?
+#7  Foam::polyMesh::polyMesh(Foam::IOobject const&) at ??:?
+#8  Foam::fvMesh::fvMesh(Foam::IOobject const&) at ??:?
+#9  ? at ??:?
+#10  __libc_start_main in "/lib/x86_64-linux-gnu/libc.so.6"
+#11  ? at ??:?
+Aborted (core dumped)
