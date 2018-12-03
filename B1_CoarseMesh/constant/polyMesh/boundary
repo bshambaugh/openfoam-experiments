@@ -29,7 +29,6 @@ FoamFile
         type            cyclicAMI;
         neighbourPatch  fineCyclicBoundary;
         transform noOrdering;
-        type            patch;
         nFaces          200;
         startFace       92920;
     }
@@ -76,7 +75,6 @@ FoamFile
         type            cyclicAMI;
         neighbourPatch  outletInlet;
         transform noOrdering;
-        type            patch;
         nFaces          80;
         startFace       93920;
     }

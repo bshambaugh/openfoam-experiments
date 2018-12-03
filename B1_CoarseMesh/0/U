@@ -20,22 +20,25 @@ internalField   uniform (0 0 0);
 
 boundaryField
 {
-   inletFace
+    courseFace
     {
         type            zeroGradient;
     }
-    inlet
+    courseCyclicBoundary
     {
-        type            fixedValue;
-        value           uniform (10 0 0);
+        type            cyclicAMI;
     }
-    inletWalls
+    courseWalls
     {
         type            noSlip;
     }
-    outletInlet
+    freeBoundaryCourse
     {
-        type            cyclicAMI;
+        type            zeroGradient;
+    }
+    courseSymmetryWalls
+    {
+        type            symmetryPlane;
     }
     fineSymmetryWall
     {
@@ -57,25 +60,22 @@ boundaryField
     {
         type            zeroGradient;
     }
-    courseFace
+    inletFace
     {
         type            zeroGradient;
     }
-    courseCyclicBoundary
+    inlet
     {
-        type            cyclicAMI;
+        type            fixedValue;
+        value           uniform (10 0 0);
     }
-    courseWalls
+    inletWalls
     {
         type            noSlip;
     }
-    freeBoundaryCourse
+    outletInlet
     {
-        type            zeroGradient;
-    }
-    courseSymmetryWalls
-    {
-        type            symmetryPlane;
+        type            cyclicAMI;
     }
 }
 

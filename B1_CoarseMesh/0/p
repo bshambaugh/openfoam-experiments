@@ -20,42 +20,6 @@ internalField   uniform 0;
 
 boundaryField
 {
-    inletFace
-    {
-        type            zeroGradient;
-    }
-    inlet
-    {
-        type            zeroGradient;
-    }
-    inletWalls
-    {
-        type            zeroGradient;
-    }
-    outletInlet
-    {
-        type            cyclicAMI;
-    }
-    fineSymmetryWall
-    {
-        type            symmetryPlane;
-    }
-    fineWalls
-    {
-        type            zeroGradient;
-    }
-    fineCyclicBoundary
-    {
-        type            cyclicAMI;
-    }
-    fineplug
-    {
-        type            cyclicAMI;
-    }
-    faceFine
-    {
-        type            zeroGradient;
-    }
     courseFace
     {
         type            zeroGradient;
@@ -77,7 +41,42 @@ boundaryField
     {
         type            symmetryPlane;
     }
-
+    fineSymmetryWall
+    {
+        type            symmetryPlane;
+    }
+    fineWalls
+    {
+        type            zeroGradient;
+    }
+    fineCyclicBoundary
+    {
+        type            cyclicAMI;
+    }
+    fineplug
+    {
+        type            cyclicAMI;
+    }
+    faceFine
+    {
+        type            zeroGradient;
+    }
+    inletFace
+    {
+        type            zeroGradient;
+    }
+    inlet
+    {
+        type            zeroGradient;
+    }
+    inletWalls
+    {
+        type            zeroGradient;
+    }
+    outletInlet
+    {
+        type            cyclicAMI;
+    }
 }
 
 // ************************************************************************* //

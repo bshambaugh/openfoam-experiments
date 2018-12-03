@@ -8,10 +8,10 @@
 Build  : 4.1
 Exec   : foamDataToFluent
 Date   : Dec 02 2018
-Time   : 07:38:08
+Time   : 21:52:11
 Host   : "caelinux"
-PID    : 19930
-Case   : /home/caelinux/OpenFOAM/caelinux-4.1/run/tutorials/incompressible/icoFoam/CourseMesh
+PID    : 22596
+Case   : /home/caelinux/OpenFOAM/caelinux-4.1/run/tutorials/incompressible/icoFoam/B1_CoarseMesh
 nProcs : 1
 sigFpe : Enabling floating point exception trapping (FOAM_SIGFPE).
 fileModificationChecking : Monitoring run-time modified files using timeStampMaster
@@ -22,26 +22,47 @@ Create time
 
 Create mesh for time = 0
 
+Time = 0
+AMI: Creating addressing and weights between 200 source faces and 160 target faces
+--> FOAM Warning : 
+    From function void Foam::AMIMethod<SourcePatch, TargetPatch>::checkPatches() const [with SourcePatch = Foam::PrimitivePatch<Foam::face, Foam::SubList, const Foam::Field<Foam::Vector<double> >&>; TargetPatch = Foam::PrimitivePatch<Foam::face, Foam::SubList, const Foam::Field<Foam::Vector<double> >&>]
+    in file lnInclude/AMIMethod.C at line 57
+    Source and target patch bounding boxes are not similar
+    source box span     : (0.001 0.006 0.0285714)
+    target box span     : (0.001 0.006 0.0257143)
+    source box          : (0 0 0.0047619) (0.001 0.006 0.0333333)
+    target box          : (0 0 0.00428571) (0.001 0.006 0.03)
+    inflated target box : (-0.0013212 -0.0013212 0.00296451) (0.0023212 0.0073212 0.0313212)
 
 
 --> FOAM FATAL ERROR: 
-Attempt to cast type patch to type cyclicAMI
+Unable to set source and target faces
 
-    From function To& Foam::refCast(From&) [with To = const Foam::cyclicAMIPolyPatch; From = const Foam::polyPatch]
-    in file /home/ubuntu/OpenFOAM/OpenFOAM-4.1/src/OpenFOAM/lnInclude/typeInfo.H at line 114.
+    From function void Foam::faceAreaWeightAMI<SourcePatch, TargetPatch>::setNextFaces(Foam::label&, Foam::label&, Foam::label&, const boolList&, Foam::labelList&, const Foam::DynamicList<int>&, bool) const [with SourcePatch = Foam::PrimitivePatch<Foam::face, Foam::SubList, const Foam::Field<Foam::Vector<double> >&>; TargetPatch = Foam::PrimitivePatch<Foam::face, Foam::SubList, const Foam::Field<Foam::Vector<double> >&>; Foam::label = int; Foam::boolList = Foam::List<bool>; Foam::labelList = Foam::List<int>]
+    in file lnInclude/faceAreaWeightAMI.C at line 287.
 
 FOAM aborting
 
 #0  Foam::error::printStack(Foam::Ostream&) at ??:?
 #1  Foam::error::abort() at ??:?
-#2  Foam::cyclicAMIPolyPatch const& Foam::refCast<Foam::cyclicAMIPolyPatch const, Foam::polyPatch const>(Foam::polyPatch const&) at ??:?
-#3  Foam::cyclicAMIPolyPatch::neighbPatchID() const at ??:?
-#4  Foam::cyclicAMIPolyPatch::neighbPatch() const at ??:?
-#5  Foam::cyclicAMIPolyPatch::calcGeometry(Foam::PstreamBuffers&) at ??:?
-#6  Foam::polyBoundaryMesh::calcGeometry() at ??:?
-#7  Foam::polyMesh::polyMesh(Foam::IOobject const&) at ??:?
-#8  Foam::fvMesh::fvMesh(Foam::IOobject const&) at ??:?
-#9  ? at ??:?
-#10  __libc_start_main in "/lib/x86_64-linux-gnu/libc.so.6"
-#11  ? at ??:?
+#2  Foam::faceAreaWeightAMI<Foam::PrimitivePatch<Foam::face, Foam::SubList, Foam::Field<Foam::Vector<double> > const&, Foam::Vector<double> >, Foam::PrimitivePatch<Foam::face, Foam::SubList, Foam::Field<Foam::Vector<double> > const&, Foam::Vector<double> > >::calcAddressing(Foam::List<Foam::DynamicList<int, 0u, 2u, 1u> >&, Foam::List<Foam::DynamicList<double, 0u, 2u, 1u> >&, Foam::List<Foam::DynamicList<int, 0u, 2u, 1u> >&, Foam::List<Foam::DynamicList<double, 0u, 2u, 1u> >&, int, int) at ??:?
+#3  Foam::faceAreaWeightAMI<Foam::PrimitivePatch<Foam::face, Foam::SubList, Foam::Field<Foam::Vector<double> > const&, Foam::Vector<double> >, Foam::PrimitivePatch<Foam::face, Foam::SubList, Foam::Field<Foam::Vector<double> > const&, Foam::Vector<double> > >::calculate(Foam::List<Foam::List<int> >&, Foam::List<Foam::List<double> >&, Foam::List<Foam::List<int> >&, Foam::List<Foam::List<double> >&, int, int) at ??:?
+#4  Foam::AMIInterpolation<Foam::PrimitivePatch<Foam::face, Foam::SubList, Foam::Field<Foam::Vector<double> > const&, Foam::Vector<double> >, Foam::PrimitivePatch<Foam::face, Foam::SubList, Foam::Field<Foam::Vector<double> > const&, Foam::Vector<double> > >::update(Foam::PrimitivePatch<Foam::face, Foam::SubList, Foam::Field<Foam::Vector<double> > const&, Foam::Vector<double> > const&, Foam::PrimitivePatch<Foam::face, Foam::SubList, Foam::Field<Foam::Vector<double> > const&, Foam::Vector<double> > const&) at ??:?
+#5  Foam::AMIInterpolation<Foam::PrimitivePatch<Foam::face, Foam::SubList, Foam::Field<Foam::Vector<double> > const&, Foam::Vector<double> >, Foam::PrimitivePatch<Foam::face, Foam::SubList, Foam::Field<Foam::Vector<double> > const&, Foam::Vector<double> > >::constructFromSurface(Foam::PrimitivePatch<Foam::face, Foam::SubList, Foam::Field<Foam::Vector<double> > const&, Foam::Vector<double> > const&, Foam::PrimitivePatch<Foam::face, Foam::SubList, Foam::Field<Foam::Vector<double> > const&, Foam::Vector<double> > const&, Foam::autoPtr<Foam::searchableSurface> const&) at ??:?
+#6  Foam::AMIInterpolation<Foam::PrimitivePatch<Foam::face, Foam::SubList, Foam::Field<Foam::Vector<double> > const&, Foam::Vector<double> >, Foam::PrimitivePatch<Foam::face, Foam::SubList, Foam::Field<Foam::Vector<double> > const&, Foam::Vector<double> > >::AMIInterpolation(Foam::PrimitivePatch<Foam::face, Foam::SubList, Foam::Field<Foam::Vector<double> > const&, Foam::Vector<double> > const&, Foam::PrimitivePatch<Foam::face, Foam::SubList, Foam::Field<Foam::Vector<double> > const&, Foam::Vector<double> > const&, Foam::autoPtr<Foam::searchableSurface> const&, Foam::faceAreaIntersect::triangulationMode const&, bool, Foam::AMIInterpolation<Foam::PrimitivePatch<Foam::face, Foam::SubList, Foam::Field<Foam::Vector<double> > const&, Foam::Vector<double> >, Foam::PrimitivePatch<Foam::face, Foam::SubList, Foam::Field<Foam::Vector<double> > const&, Foam::Vector<double> > >::interpolationMethod const&, double, bool) at ??:?
+#7  Foam::cyclicAMIPolyPatch::resetAMI(Foam::AMIInterpolation<Foam::PrimitivePatch<Foam::face, Foam::SubList, Foam::Field<Foam::Vector<double> > const&, Foam::Vector<double> >, Foam::PrimitivePatch<Foam::face, Foam::SubList, Foam::Field<Foam::Vector<double> > const&, Foam::Vector<double> > >::interpolationMethod const&) const at ??:?
+#8  Foam::cyclicAMIPolyPatch::AMI() const at ??:?
+#9  Foam::cyclicAMIPolyPatch::applyLowWeightCorrection() const at ??:?
+#10  Foam::cyclicAMIFvPatchField<double>::patchNeighbourField() const at ??:?
+#11  Foam::coupledFvPatchField<double>::evaluate(Foam::UPstream::commsTypes) at ??:?
+#12  Foam::cyclicAMIFvPatchField<double>::cyclicAMIFvPatchField(Foam::fvPatch const&, Foam::DimensionedField<double, Foam::volMesh> const&, Foam::dictionary const&) at ??:?
+#13  Foam::fvPatchField<double>::adddictionaryConstructorToTable<Foam::cyclicAMIFvPatchField<double> >::New(Foam::fvPatch const&, Foam::DimensionedField<double, Foam::volMesh> const&, Foam::dictionary const&) at ??:?
+#14  Foam::fvPatchField<double>::New(Foam::fvPatch const&, Foam::DimensionedField<double, Foam::volMesh> const&, Foam::dictionary const&) at ??:?
+#15  Foam::GeometricField<double, Foam::fvPatchField, Foam::volMesh>::Boundary::readField(Foam::DimensionedField<double, Foam::volMesh> const&, Foam::dictionary const&) at ??:?
+#16  Foam::GeometricField<double, Foam::fvPatchField, Foam::volMesh>::readFields(Foam::dictionary const&) at ??:?
+#17  Foam::GeometricField<double, Foam::fvPatchField, Foam::volMesh>::readFields() at ??:?
+#18  Foam::GeometricField<double, Foam::fvPatchField, Foam::volMesh>::GeometricField(Foam::IOobject const&, Foam::fvMesh const&) at ??:?
+#19  ? at ??:?
+#20  __libc_start_main in "/lib/x86_64-linux-gnu/libc.so.6"
+#21  ? at ??:?
 Aborted (core dumped)
