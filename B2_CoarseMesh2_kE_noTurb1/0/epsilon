@@ -1,0 +1,87 @@
+/*--------------------------------*- C++ -*----------------------------------*\
+| =========                 |                                                 |
+| \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox           |
+|  \\    /   O peration     | Version:  4.1                                   |
+|   \\  /    A nd           | Web:      www.OpenFOAM.org                      |
+|    \\/     M anipulation  |                                                 |
+\*---------------------------------------------------------------------------*/
+FoamFile
+{
+    version     2.0;
+    format      ascii;
+    class       volScalarField;
+    location    "0";
+    object      epsilon;
+}
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+
+dimensions      [0 2 -3 0 0 0 0];
+
+internalField   uniform 2040.0;
+
+boundaryField
+{
+    courseFace
+    {
+        type            zeroGradient;
+    }
+    courseCyclicBoundary
+    {
+        type            cyclicAMI;
+    }
+    courseWalls
+    {
+        type            epsilonWallFunction;
+        value           uniform 2040.0;
+    }
+    freeBoundaryCourse
+    {
+        type            zeroGradient;
+    }
+    courseSymmetryWalls
+    {
+        type            symmetryPlane;
+    }
+    fineSymmetryWall
+    {
+        type            symmetryPlane;
+    }
+    fineWalls
+    {
+        type            epsilonWallFunction;
+        value           uniform 2040.0;
+    }
+    fineCyclicBoundary
+    {
+        type            cyclicAMI;
+    }
+    fineplug
+    {
+        type            cyclicAMI;
+    }
+    faceFine
+    {
+        type            zeroGradient;
+    }
+    inletFace
+    {
+        type            zeroGradient;
+    }
+    inlet
+    {
+        type            fixedValue;
+        value           uniform 2040.0;
+    }
+    inletWalls
+    {
+        type            epsilonWallFunction;
+        value           uniform 2040.0;
+    }
+    outletInlet
+    {
+        type            cyclicAMI;
+    }
+}
+
+
+// ************************************************************************* //
