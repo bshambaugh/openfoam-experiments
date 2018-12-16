@@ -1,0 +1,82 @@
+/*--------------------------------*- C++ -*----------------------------------*\
+| =========                 |                                                 |
+| \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox           |
+|  \\    /   O peration     | Version:  4.1                                   |
+|   \\  /    A nd           | Web:      www.OpenFOAM.org                      |
+|    \\/     M anipulation  |                                                 |
+\*---------------------------------------------------------------------------*/
+FoamFile
+{
+    version     2.0;
+    format      ascii;
+    class       polyBoundaryMesh;
+    location    "constant/polyMesh";
+    object      boundary;
+}
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+
+9
+(
+    inletFace
+    {
+        type            empty;
+        inGroups        1(empty);
+        nFaces          450;
+        startFace       13220;
+    }
+    inlet
+    {
+        type            patch;
+        nFaces          15;
+        startFace       13670;
+    }
+    inletWalls
+    {
+        type            wall;
+        inGroups        1(wall);
+        nFaces          30;
+        startFace       13685;
+    }
+    outletInlet
+    {
+        type            cyclicAMI;
+        neighbourPatch  fineplug;
+        transform       noOrdering;
+        nFaces          15;
+        startFace       13715;
+    }
+    fineSymmetryWall
+    {
+        type            patch;
+        nFaces          80;
+        startFace       13730;
+    }
+    fineWalls
+    {
+        type            wall;
+        nFaces          160;
+        startFace       13810;
+    }
+    fineCyclicBoundary
+    {
+        type            patch;
+        nFaces          160;
+        startFace       13970;
+    }
+    fineplug
+    {
+        type            cyclicAMI;
+        neighbourPatch  outletInlet;
+        transform       noOrdering; 
+        nFaces          80;
+        startFace       14130;
+    }
+    faceFine
+    {
+        type            empty;
+        nFaces          13120;
+        startFace       14210;
+    }
+)
+
+// ************************************************************************* //
