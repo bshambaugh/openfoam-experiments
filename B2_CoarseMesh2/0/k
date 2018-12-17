@@ -1,0 +1,87 @@
+/*--------------------------------*- C++ -*----------------------------------*\
+| =========                 |                                                 |
+| \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox           |
+|  \\    /   O peration     | Version:  4.1                                   |
+|   \\  /    A nd           | Web:      www.OpenFOAM.org                      |
+|    \\/     M anipulation  |                                                 |
+\*---------------------------------------------------------------------------*/
+FoamFile
+{
+    version     2.0;
+    format      ascii;
+    class       volScalarField;
+    location    "0";
+    object      k;
+}
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+
+dimensions      [0 2 -2 0 0 0 0];
+
+internalField   uniform 0.648;
+
+boundaryField
+{
+    courseFace
+    {
+         type            zeroGradient;
+    }
+    courseCyclicBoundary
+    {
+        type            cyclicAMI;
+    }
+    courseWalls
+    {
+        type            kqRWallFunction;
+        value           uniform 0.648;
+    }
+    freeBoundaryCourse
+    {
+         type            zeroGradient;
+    }
+    courseSymmetryWalls
+    {
+         type            symmetryPlane;
+    }
+    fineSymmetryWall
+    {
+        type            symmetryPlane;
+    }
+    fineWalls
+    {
+        type            kqRWallFunction;
+        value           uniform 0.648;
+    }
+    fineCyclicBoundary
+    {
+        type            cyclicAMI;
+    }
+    fineplug
+    {
+        type            cyclicAMI;
+    }
+    faceFine
+    {
+         type            zeroGradient;
+    }
+    inletFace
+    {
+        type            zeroGradient;
+    }
+    inlet
+    {
+        type            fixedValue;
+        value           uniform 0.648;
+    }
+    inletWalls
+    {
+        type            kqRWallFunction;
+        value           uniform 0.648;
+    }
+    outletInlet
+    {
+        type            cyclicAMI;
+    }
+}
+
+
+// ************************************************************************* //
