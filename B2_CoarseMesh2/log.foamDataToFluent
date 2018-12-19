@@ -1,0 +1,98 @@
+/*---------------------------------------------------------------------------*\
+| =========                 |                                                 |
+| \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox           |
+|  \\    /   O peration     | Version:  4.1                                   |
+|   \\  /    A nd           | Web:      www.OpenFOAM.org                      |
+|    \\/     M anipulation  |                                                 |
+\*---------------------------------------------------------------------------*/
+Build  : 4.1
+Exec   : foamDataToFluent
+Date   : Dec 19 2018
+Time   : 18:32:23
+Host   : "caelinux"
+PID    : 6063
+Case   : /home/caelinux/OpenFOAM/caelinux-4.1/run/tutorials/incompressible/simpleFoam/B2_CoarseMesh2
+nProcs : 1
+sigFpe : Enabling floating point exception trapping (FOAM_SIGFPE).
+fileModificationChecking : Monitoring run-time modified files using timeStampMaster
+allowSystemOperations : Allowing user-supplied system call operations
+
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+Create time
+
+Create mesh for time = 0
+
+Time = 0
+AMI: Creating addressing and weights between 200 source faces and 160 target faces
+AMI: Patch source sum(weights) min/max/average = 1, 1, 1
+AMI: Patch target sum(weights) min/max/average = 1, 1, 1
+AMI: Creating addressing and weights between 80 source faces and 15 target faces
+AMI: Patch source sum(weights) min/max/average = 1, 1, 1
+AMI: Patch target sum(weights) min/max/average = 1, 1, 1
+    Converting field p
+    Converting field k
+    Converting field epsilon
+    Converting field U
+
+Time = 1
+    Converting field p
+    Converting field k
+    Converting field epsilon
+    Converting field U
+
+Time = 2
+    Converting field p
+    Converting field k
+    Converting field epsilon
+    Converting field U
+
+Time = 3
+    Converting field p
+    Converting field k
+    Converting field epsilon
+    Converting field U
+
+Time = 4
+    Converting field p
+    Converting field k
+    Converting field epsilon
+    Converting field U
+
+Time = 5
+    Converting field p
+    Converting field k
+    Converting field epsilon
+    Converting field U
+
+Time = 6
+    Converting field p
+    Converting field k
+    Converting field epsilon
+    Converting field U
+
+Time = 7
+    Converting field p
+    Converting field k
+    Converting field epsilon
+    Converting field U
+
+Time = 8
+    Converting field p
+    Converting field k
+    Converting field epsilon
+    Converting field U
+
+Time = 9
+    Converting field p
+    Converting field k
+    Converting field epsilon
+    Converting field U
+
+Time = 10
+    Converting field p
+    Converting field k
+    Converting field epsilon
+    Converting field U
+
+End
+
