@@ -1,0 +1,218 @@
+/*---------------------------------------------------------------------------*\
+| =========                 |                                                 |
+| \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox           |
+|  \\    /   O peration     | Version:  4.1                                   |
+|   \\  /    A nd           | Web:      www.OpenFOAM.org                      |
+|    \\/     M anipulation  |                                                 |
+\*---------------------------------------------------------------------------*/
+Build  : 4.1
+Exec   : foamDataToFluent
+Date   : Dec 26 2018
+Time   : 20:12:54
+Host   : "caelinux"
+PID    : 30609
+Case   : /home/caelinux/OpenFOAM/caelinux-4.1/run/tutorials/incompressible/simpleFoam/B2_CoarseMesh2_monkey
+nProcs : 1
+sigFpe : Enabling floating point exception trapping (FOAM_SIGFPE).
+fileModificationChecking : Monitoring run-time modified files using timeStampMaster
+allowSystemOperations : Allowing user-supplied system call operations
+
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+Create time
+
+Create mesh for time = 0
+
+Time = 0
+AMI: Creating addressing and weights between 200 source faces and 160 target faces
+AMI: Patch source sum(weights) min/max/average = 1, 1, 1
+AMI: Patch target sum(weights) min/max/average = 1, 1, 1
+AMI: Creating addressing and weights between 80 source faces and 15 target faces
+AMI: Patch source sum(weights) min/max/average = 1, 1, 1
+AMI: Patch target sum(weights) min/max/average = 1, 1, 1
+    Converting field p
+    Converting field k
+    Converting field epsilon
+    Converting field U
+
+Time = 1
+    Converting field p
+    Converting field k
+    Converting field epsilon
+    Converting field U
+
+Time = 2
+    Converting field p
+    Converting field k
+    Converting field epsilon
+    Converting field U
+
+Time = 3
+    Converting field p
+    Converting field k
+    Converting field epsilon
+    Converting field U
+
+Time = 4
+    Converting field p
+    Converting field k
+    Converting field epsilon
+    Converting field U
+
+Time = 5
+    Converting field p
+    Converting field k
+    Converting field epsilon
+    Converting field U
+
+Time = 6
+    Converting field p
+    Converting field k
+    Converting field epsilon
+    Converting field U
+
+Time = 7
+    Converting field p
+    Converting field k
+    Converting field epsilon
+    Converting field U
+
+Time = 8
+    Converting field p
+    Converting field k
+    Converting field epsilon
+    Converting field U
+
+Time = 9
+    Converting field p
+    Converting field k
+    Converting field epsilon
+    Converting field U
+
+Time = 10
+    Converting field p
+    Converting field k
+    Converting field epsilon
+    Converting field U
+
+Time = 11
+    Converting field p
+    Converting field k
+    Converting field epsilon
+    Converting field U
+
+Time = 12
+    Converting field p
+    Converting field k
+    Converting field epsilon
+    Converting field U
+
+Time = 13
+    Converting field p
+    Converting field k
+    Converting field epsilon
+    Converting field U
+
+Time = 14
+    Converting field p
+    Converting field k
+    Converting field epsilon
+    Converting field U
+
+Time = 15
+    Converting field p
+    Converting field k
+    Converting field epsilon
+    Converting field U
+
+Time = 16
+    Converting field p
+    Converting field k
+    Converting field epsilon
+    Converting field U
+
+Time = 17
+    Converting field p
+    Converting field k
+    Converting field epsilon
+    Converting field U
+
+Time = 18
+    Converting field p
+    Converting field k
+    Converting field epsilon
+    Converting field U
+
+Time = 19
+    Converting field p
+    Converting field k
+    Converting field epsilon
+    Converting field U
+
+Time = 20
+    Converting field p
+    Converting field k
+    Converting field epsilon
+    Converting field U
+
+Time = 21
+    Converting field p
+    Converting field k
+    Converting field epsilon
+    Converting field U
+
+Time = 22
+    Converting field p
+    Converting field k
+    Converting field epsilon
+    Converting field U
+
+Time = 23
+    Converting field p
+    Converting field k
+    Converting field epsilon
+    Converting field U
+
+Time = 24
+    Converting field p
+    Converting field k
+    Converting field epsilon
+    Converting field U
+
+Time = 25
+    Converting field p
+    Converting field k
+    Converting field epsilon
+    Converting field U
+
+Time = 26
+    Converting field p
+    Converting field k
+    Converting field epsilon
+    Converting field U
+
+Time = 27
+    Converting field p
+    Converting field k
+    Converting field epsilon
+    Converting field U
+
+Time = 28
+    Converting field p
+    Converting field k
+    Converting field epsilon
+    Converting field U
+
+Time = 29
+    Converting field p
+    Converting field k
+    Converting field epsilon
+    Converting field U
+
+Time = 30
+    Converting field p
+    Converting field k
+    Converting field epsilon
+    Converting field U
+
+End
+
